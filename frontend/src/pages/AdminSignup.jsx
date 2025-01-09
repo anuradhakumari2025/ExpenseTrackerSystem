@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 function AdminSignup() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [firstName, setFirstName] = useState('')
-    const [lastName, setLastName] = useState('')
+    const [name, setName] = useState('')
+    // const [lastName, setLastName] = useState('')
     const [userData, setUserData] = useState({})
   
   
@@ -13,18 +13,19 @@ function AdminSignup() {
       e.preventDefault()
       
       setUserData({
-        fullName:{
-          firstName:firstName,
-          lastName: lastName
-        },
+        // fullName:{
+          name:name,
+          // lastName: lastName
+        // },
+        
         email:email,
         password: password
       })
   
       // console.log(userData);
       setEmail('')
-      setFirstName('')
-      setLastName('')
+      setName('')
+      // setLastName('')
       setPassword('')
     }
   return (
@@ -35,19 +36,19 @@ function AdminSignup() {
         <form onSubmit={(e)=>{
           submitHandler(e)
         }}>
-          <h3 className="text-lg w-full font-medium mb-2">What is our Admin's Name ?</h3>
+          <h3 className="text-lg w-full font-medium mb-2"> Admin's Name ?</h3>
           <div className='flex gap-4 mb-6'>
           <input 
             required 
-            className='bg-[#eeeeee] w-1/2 rounded px-4 py-2 border text-lg placeholder:text-base text-black'
+            className='bg-[#eeeeee] w-full rounded px-4 py-2 border text-lg placeholder:text-base text-black'
             type="text" 
             placeholder='First Name'
-            value={firstName}
+            value={name}
             onChange={(e) => {
-              setFirstName(e.target.value)
+              setName(e.target.value)
             }}
           />
-          <input 
+          {/* <input 
             required 
             className='bg-[#eeeeee] w-1/2 rounded px-4 py-2 border text-lg placeholder:text-base text-black'
             type="text" 
@@ -56,10 +57,10 @@ function AdminSignup() {
             onChange={(e) => {
               setLastName(e.target.value)
             }}
-          />
+          /> */}
           </div>
 
-          <h3 className="text-lg font-medium mb-2">What is our Admin's Email?</h3>
+          <h3 className="text-lg font-medium mb-2"> Admin's Email?</h3>
           <input 
             required 
             value={email}

@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 function AdminLogin() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [captainData, setCaptainData] = useState('')
+  const [adminData, setAdminData] = useState('')
 
   const submitHandler = (e) => {
     e.preventDefault()
-    setCaptainData({
+    setAdminData({
       email: email,
       password: password
     })
@@ -17,8 +17,8 @@ function AdminLogin() {
   }
 
   useEffect(() => {
-    console.log(captainData)
-  }, [captainData])
+    // console.log(adminData)
+  }, [adminData])
 
   return (
     <div className='p-7 h-screen flex flex-col justify-between'>
@@ -47,7 +47,7 @@ function AdminLogin() {
             className='bg-[#111] text-white font-semibold mb-3 rounded px-4 py-2 w-full text-lg placeholder:text-base'
           >Login</button>
         </form>
-        <p className='text-center'>Join a Fleet?<Link to='/adminsignup' className='text-blue-600'> Register as a Captain </Link></p>
+        <p className='text-center'>Take Charge?<Link to='/adminsignup' className='text-blue-600'> Register as an Admin </Link></p>
       </div>
       <div>
         <Link
